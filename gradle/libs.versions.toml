@@ -7,6 +7,7 @@ kotlin = "2.1.0"
 kotlinxDatetime = "0.6.1"
 kotlinxSerializationJSON = "1.7.3"
 kotlinxCoroutines = "1.9.0"
+arrow = "1.2.4"
 
 [libraries]
 kotlinGradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
@@ -15,11 +16,13 @@ kotlinxSerialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-j
 kotlinxCoroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinxCoroutines" }
 sl4fj = { module = "org.slf4j:slf4j-api", version = "2.0.16" }
 kotlinLogging = { module = "io.github.oshai:kotlin-logging-jvm", version = "7.0.0" }
-
+arrow-core = { module = "io.arrow-kt:arrow-core", version.ref = "arrow" }
+arrow-fx-coroutines = { module = "io.arrow-kt:arrow-fx-coroutines", version.ref = "arrow" }
 # Libraries can be bundled together for easier import
 [bundles]
 kotlinxEcosystem = ["kotlinxDatetime", "kotlinxSerialization", "kotlinxCoroutines"]
 logging = ["sl4fj", "kotlinLogging"]
+arrow = ["arrow-core", "arrow-fx-coroutines"]
 
 [plugins]
 kotlinPluginSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
