@@ -22,5 +22,9 @@ value class NonEmptyString private constructor(val value: String) {
         fun of(value: String): Either<EmptyString, NonEmptyString> =
             if (value.isNotBlank()) Either.Right(NonEmptyString(value))
             else Either.Left(EmptyString)
+
+        fun orThrow(value: String) =
+            of(value)
+                .fold({ throw IllegalArgumentException("Value must be non-empty") }, { it })
     }
 }
