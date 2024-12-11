@@ -23,3 +23,5 @@ plugins {
 //include(":utils")
 
 rootProject.name = "boxpark"
+include("customer:catalogue-domain")
+findProject(":customer:catalogue-domain")?.name = "catalogue-domain"
