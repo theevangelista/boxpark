@@ -27,4 +27,12 @@ class NonEmptyStringTest {
         val result = NonEmptyString.of(value)
         assertTrue(result.isLeft())
     }
+
+    @Test
+    fun `two NonEmptyString instances with the same value should be equal`() {
+        val value = "value"
+        val first = NonEmptyString.of(value).getOrNull()!!
+        val second = NonEmptyString.of(value).getOrNull()!!
+        assertEquals(first, second)
+    }
 }
